@@ -43,7 +43,7 @@ my $app = sub {
 	 return [
 		 500,
 		 [ 'Content-Type' => 'application/json' ],
-		 [$json->encode({result => 'ERROR', content => $error})]
+		 [$json->utf8->canonical->encode({result => 'ERROR', content => $error})]
 		];
        }
        my $input = $json->decode($json_content);
@@ -94,7 +94,7 @@ my $app = sub {
        return [
 	       200,
 	       ['Content-Type', => 'application/json'],
-	       [$json->encode($output)]
+	       [$json->utf8->canonical->encode($output)]
 	       ];
      }
     };
