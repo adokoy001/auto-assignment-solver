@@ -12,6 +12,11 @@ use JSON;
 #
 # And then access : localhost:5000/
 #
+# SETUP :
+#  Install required cpan modules.
+#   Plack -- The PSGI toolkit.
+#   JSON  -- JSON encoder/decoder
+#
 #########################################
 
 my $json = JSON->new->allow_nonref;
