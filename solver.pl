@@ -27,9 +27,26 @@ my $app = sub {
 	       200,
 	       [ 'Content-Type' => 'text/html'],
 	       [
-		'<!Doctype HTML><html><body><form action="/solve" method="post" target="_blank">'.
-		'<textarea name="json_content">'.
-		'{"available_table" : [{"table_id" : 201, "idle_time" : 300, "min_cap" : 2, "max_cap" : 4, "type" : "t"},{"table_id" : 202, "idle_time" : 200, "min_cap" : 4, "max_cap" : 6, "type" : "l"},{"table_id" : 203, "idle_time" : 500, "min_cap" : 4, "max_cap" : 6, "type" : "l"},{"table_id" : 204, "idle_time" : 100, "min_cap" : 1, "max_cap" : 1, "type" : "c" },{"table_id" : 205, "idle_time" : 250, "min_cap" : 1, "max_cap" : 1, "type" : "c" }],"queue" : [{"guest_id" : 301, "index" : 1, "use_num" : 5, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},{"guest_id" : 302, "index" : 2, "use_num" : 2, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},{"guest_id" : 303, "index" : 3, "use_num" : 1, "acceptable" : { "c" : 1, "t" : 1, "l" : 1 }},{"guest_id" : 304, "index" : 4, "use_num" : 2, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},{"guest_id" : 305, "index" : 5, "use_num" : 4, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }}]}'.
+		'<!DOCTYPE html><html><body><form action="/solve" method="post" target="_blank">'.
+		'<textarea cols="120" rows="30" name="json_content">'.
+		'{'."\n".
+		' "available_table" :'."\n".
+		' ['."\n".
+		'  {"table_id" : 201, "idle_time" : 300, "min_cap" : 2, "max_cap" : 4, "type" : "t"},'."\n".
+		'  {"table_id" : 202, "idle_time" : 200, "min_cap" : 4, "max_cap" : 6, "type" : "l"},'."\n".
+		'  {"table_id" : 203, "idle_time" : 500, "min_cap" : 4, "max_cap" : 6, "type" : "l"},'."\n".
+		'  {"table_id" : 204, "idle_time" : 100, "min_cap" : 1, "max_cap" : 1, "type" : "c" },'."\n".
+		'  {"table_id" : 205, "idle_time" : 250, "min_cap" : 1, "max_cap" : 1, "type" : "c" }'."\n".
+		' ],'."\n".
+		' "queue" : '."\n".
+		' ['."\n".
+		'  {"guest_id" : 301, "index" : 1, "use_num" : 5, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},'."\n".
+		'  {"guest_id" : 302, "index" : 2, "use_num" : 2, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},'."\n".
+		'  {"guest_id" : 303, "index" : 3, "use_num" : 1, "acceptable" : { "c" : 1, "t" : 1, "l" : 1 }},'."\n".
+		'  {"guest_id" : 304, "index" : 4, "use_num" : 2, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }},'."\n".
+		'  {"guest_id" : 305, "index" : 5, "use_num" : 4, "acceptable" : { "c" : 0, "t" : 1, "l" : 1 }}'."\n".
+		' ]'."\n".
+		'}'."\n".
 		'</textarea><input type="submit" value="submit"></input></form></body></html>'
 	       ]
 	      ];
